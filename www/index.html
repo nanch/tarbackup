@@ -1,13 +1,16 @@
-
 <html>
-	<form action="submit.php" method="POST" style="border:1px solid gray; width: 500px; margin: auto; padding: 10px; padding-left: 30px;">
-		<h1 style="margin: 0px; margin-bottom: 10px">create a new account</h1>
-		<table>
-			<tr><td>account name: </td><td><input type="text" name="name"></td></tr>
-			<tr><td>password:</td><td><input type="password" name="password"></td></tr>
-			<tr><td>verify password:</td><td><input type="password" name="passwordverify"></td></tr>
-			<tr><td>email address: </td><td><input type="text" name="email"></td></tr><tr>
-		<td colspan=2><input type="submit" value="create your account" style="padding: 3px;"></td></tr>
-		</table>
-	</form>
+        <head><style>*{font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}</style></head>
+        <div style="margin: auto; padding: 0px; text-align: center;"><h1>tarbackup - free online backup provided by <a href="http://www.nanch.com" style="color: blue; text-decoration:none;">nanch.com</a></h1></div>
+        <form action="submit.php" method="POST" style="border:1px solid gray; width: 400px; margin: auto; padding: 10px; padding-left: 30px;">
+                <h2 style="margin: 0px; margin-bottom: 10px">create an account</h2>
+                'account name' and 'password' <br/><i>must</i> only contain alphanumerics. (a-z A-Z 0-9)<br/><br/>
+                (all field required) <br/>
+                <table>
+                        <tr><td>account name: </td><td><input type="text" name="name"></td></tr>
+                        <tr><td>password:</td><td><input type="password" name="password"></td></tr>
+                        <tr><td>verify password:</td><td><input type="password" name="passwordverify"></td></tr>
+                        <tr><td>email address: </td><td><input type="text" name="email"></td></tr><tr>
+                <td colspan=2><input type="submit" value="create your account" style="padding: 3px;"></td></tr>
+                </table>
+        </form>
 </html>
