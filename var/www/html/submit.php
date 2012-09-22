@@ -64,7 +64,10 @@ $stringData = $name . ":" . crypt512($password) . ":" . $email . "\n";
 fwrite($fh, $stringData);
 fclose($fh);
 
-echo "Congratulations! Your account named '$name' has been registered. it may take up to 5 minutes for your account to be created.";
+echo "<br/><center><b><span style=\"color: green;\">Congratulations! Your account named '$name' has been registered.</span><br/>
+ it may take up to 5 minutes for your account to be created. <a href=\"/howto.html\">Read how to use tarbackup</a> in the meantime!</b></center>";
+
+include("howto.html");
 
 ?>
 
