@@ -19,8 +19,15 @@ while (<INFILE>) {
  @parts = split(/:/);
  $user = @parts[0];
  $password = @parts[1];
- `/usr/sbin/useradd $user -g targroup`;
+ $homedir = "/mnt/r6/$user";
+ `/usr/sbin/useradd $user -g targroup -d $homedir`;
  `echo $password | /usr/bin/passwd $user --stdin`;
+ `chown root:root $homedir`;
+ `chmod 711 $homedir`;
+
+ `mkdir $homedir/storage`;
+ `chown $user $homedir/storage`;
+ `chmod 760 $homedir/storage`;
 }
 close LOGFILE;
 close INFILE;

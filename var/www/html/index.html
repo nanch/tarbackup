@@ -1,0 +1,57 @@
+
+<html>
+   <head>
+      <style>
+         input { width:220px; }
+         * { font-family: "PT Serif", "Open Sans", "Lucida Sans Unicode", "Lucida Grande", sans-serif; color: #222;}
+      </style>
+      <link href="//fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css" />
+      <link href="http://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet" type="text/css" />
+   </head>
+   <body style="margin: 0px; padding: 0px;">
+      <div style="margin: auto; padding: 0px; text-align: center;">
+         <h1><span style="color: green;">tar</span>backup - tar backup provided by <a href="http://www.nanch.com" style="color: blue; text-decoration:none;">nanch.com</a></h1>
+      </div>
+      <form action="submit.php" method="POST" style="border:1px solid gray; width: 400px; margin: auto; padding: 10px; padding-left: 30px;">
+         <h2 style="margin: 0px; margin-bottom: 10px">create a free account</h2>
+         'account name' and 'password' <br /><i>must</i> only contain alphanumerics. (a-z A-Z 0-9)<br /><br/>
+         (all field required)
+         <table>
+	    <tr>
+               <td>account name: </td>
+               <td><input type="text" name="name" /></td>
+            </tr>
+            <tr>
+               <td>password:</td>
+               <td><input type="password" name="password" /></td>
+            </tr>
+            <tr>
+               <td>verify password:</td>
+               <td><input type="password" name="passwordverify" /></td>
+            </tr>
+            <tr>
+               <td>email address: </td>
+               <td><input type="text" name="email" /></td>
+            </tr>
+            <tr>
+               <td colspan="2"><input type="submit" value="create your account" style="padding: 4px; font-size: 18px;" /></td>
+            </tr>
+         </table>
+      </form>
+      <br /><br />
+      <div style="margin: auto; padding: 0px; text-align: center;">
+         <h1 style="display:inline;"><a href="/howto.html" style="color: blue; text-decoration:none;">
+            how to use tarbackup
+            </a> |
+         </h1>
+         <h2 style="display:inline;">
+            <a href="http://www.github.com/nanch/tarbackup" style="color: blue; text-decoration:none;">
+            git the code
+            </a> |
+            <a href="http://wiki.tarbackup.com/" style="color: blue; text-decoration:none;">
+            wiki
+            </a>
+         </h2>
+      </div>
+   </body>
+</html>

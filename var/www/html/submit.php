@@ -35,7 +35,14 @@ if (empty($password)) {return;}
 $passwordverify = getArg("passwordverify");
 if (empty($passwordverify)) {return;}
 
+
+ob_start();
+exec("/usr/bin/id $name", $output);
+$str = trim(implode($output));
+if (strlen($str) > 0 ) { ob_clean(); echo 'account name already taken, please <a href="/">try again</a> with a different acccount name'; return;}
+ob_clean();
 if (strcmp($password, $passwordverify) != 0) {echo "password and passwordverify do not match, please try again."; return; }
+
 
 if (empty($_POST["email"])) {
   echo "no email";
@@ -50,6 +57,6 @@ $stringData = $name . ":" . $password . ":" . $email . "\n";
 fwrite($fh, $stringData);
 fclose($fh);
 
-echo "user '$name' created.";
+echo "user '$name' registered. it may take up to 5 minutes for your account to be created.";
 
 ?>
