@@ -1,5 +1,12 @@
 <?php
 
+function crypt512($pw) {
+  if (CRYPT_SHA512 != 1) {
+    throw new Exception('Hashing mechanism not supported.');
+  }
+  return crypt($pw, '$6$1234567890123456$');
+}
+
 function isStringAllowed($input) {
   $allowed = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
   $chars = str_split($input);
@@ -53,10 +60,12 @@ if (empty($_POST["email"])) {
 
 $myFile = "/usr/local/etc/tarbackup/userstocreate.txt";
 $fh = fopen($myFile, 'a') or die("can't open file");
-$stringData = $name . ":" . $password . ":" . $email . "\n";
+$stringData = $name . ":" . crypt512($password) . ":" . $email . "\n";
 fwrite($fh, $stringData);
 fclose($fh);
 
-echo "user '$name' registered. it may take up to 5 minutes for your account to be created.";
+echo "Congratulations! Your account named '$name' has been registered. it may take up to 5 minutes for your account to be created.";
 
 ?>
+
+

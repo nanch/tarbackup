@@ -20,8 +20,7 @@ while (<INFILE>) {
  $user = @parts[0];
  $password = @parts[1];
  $homedir = "/mnt/r6/$user";
- `/usr/sbin/useradd $user -g targroup -d $homedir`;
- `echo $password | /usr/bin/passwd $user --stdin`;
+ `/usr/sbin/useradd -g targroup -p '$password' -d $homedir $user`;
  `chown root:root $homedir`;
  `chmod 711 $homedir`;
 
