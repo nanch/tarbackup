@@ -36,11 +36,20 @@ function getArg($argname) {
 $name = getArg("name");
 if (empty($name)) {return;}
 
-$password = getArg("password");
-if (empty($password)) {return;}
+if (empty($_POST["password"])) {
+  echo "no password";
+  return;
+} else {
+  $password = $_POST["password"];
+}
 
-$passwordverify = getArg("passwordverify");
-if (empty($passwordverify)) {return;}
+if (empty($_POST["passwordverify"])) {
+  echo "no passwordverify";
+  return;
+} else {
+  $passwordverify = $_POST["passwordverify"];
+}
+
 
 
 ob_start();
