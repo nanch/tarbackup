@@ -55,7 +55,7 @@ if (empty($_POST["email"])) {
   echo "no email";
   return;
 } else {
-  $email = $_POST["email"];
+  $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
 }
 
 $myFile = "/usr/local/etc/tarbackup/userstocreate.txt";
