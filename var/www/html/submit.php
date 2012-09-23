@@ -1,10 +1,16 @@
 <?php
 
+function rand_string( $length ) {
+  $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";	
+	$str = substr( str_shuffle( $chars ), 0, $length );
+	return $str;
+}
+
 function crypt512($pw) {
   if (CRYPT_SHA512 != 1) {
     throw new Exception('Hashing mechanism not supported.');
   }
-  return crypt($pw, '$6$1234567890123456$');
+  return crypt($pw, '$6$' . rand_string(16) . '$');
 }
 
 function isStringAllowed($input) {
