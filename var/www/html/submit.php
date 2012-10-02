@@ -41,6 +41,7 @@ function getArg($argname) {
 
 $name = getArg("name");
 if (empty($name)) {return;}
+if (strlen($name) > 32) {echo "account name too long"; return;}
 
 if (empty($_POST["password"])) {
   echo "no password";
@@ -48,6 +49,7 @@ if (empty($_POST["password"])) {
 } else {
   $password = $_POST["password"];
 }
+<<<<<<< HEAD
 
 if (empty($_POST["passwordverify"])) {
   echo "no passwordverify";
@@ -56,7 +58,15 @@ if (empty($_POST["passwordverify"])) {
   $passwordverify = $_POST["passwordverify"];
 }
 
+=======
+>>>>>>> Commited some work items
 
+if (empty($_POST["passwordverify"])) {
+  echo "no passwordverify";
+  return;
+} else {
+  $passwordverify = $_POST["passwordverify"];
+}
 
 ob_start();
 exec("/usr/bin/id $name", $output);
@@ -71,6 +81,10 @@ if (empty($_POST["email"])) {
   return;
 } else {
   $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
+<<<<<<< HEAD
+=======
+  //$email = $_POST["email"];
+>>>>>>> Commited some work items
 }
 
 $myFile = "/usr/local/etc/tarbackup/userstocreate.txt";
@@ -85,5 +99,3 @@ echo "<br/><center><b><span style=\"color: green;\">Congratulations! Your accoun
 include("howto.html");
 
 ?>
-
-

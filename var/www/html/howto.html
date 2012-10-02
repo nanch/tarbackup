@@ -9,52 +9,53 @@
          h3 { margin-left: 25px; margin-bottom: 2px;font-family: "PT Serif", "Open Sans", "Lucida Sans Unicode", "Lucida Grande", sans-serif; color: #222;}
          h2 { margin-top: 25px; margin-bottom: 2px; font-family: "PT Serif", "Open Sans", "Lucida Sans Unicode", "Lucida Grande", sans-serif; color: #222;}
          h1 {font-family: "PT Serif", "Open Sans", "Lucida Sans Unicode", "Lucida Grande", sans-serif; color: #222;}
+	 .codecustom { color:#DB5B26; font-family: Menlo, Monaco, 'Andale Mono', 'lucida console', 'Courier New', monospace; }
       </style>
-      <link href="//fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css" />
-      <link href="http://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet" type="text/css" />
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css" />
+      <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet" type="text/css" />
    </head>
    <body>
       <div style="margin: auto; padding: 0px; text-align: center;">
-         <h1>how to use <span style="color: green;">tar</span>backup</h1>
+         <h1>how to use <a href="/" style="text-decoration:none;"><span style="color: green;">tar</span>backup</a></h1>
       </div>
       <div style="margin: auto; padding: 0px; text-align: left; width: 800px;">
          <h2>Get your tarbackup.com account</h2>
-         <div style="margin-top: 4px;">Go to <a href="http://tarbackup.com" style="color: blue; text-decoration:none;">http://tarbackup.com</a> and create an account for free.</div>
+         <div style="margin-top: 4px; margin-left: 20px;">Go to <a href="https://tarbackup.com" style="color: blue; text-decoration:none;">https://tarbackup.com</a> and create an account for free.</div>
          <h2>Backup your system</h2>
          <div class="codeblock">
             # mkdir /backups</br>
-            # tar -cvpzf /backups/fullbackup.tar.gz --directory=/ --exclude=proc --exclude=sys --exclude=dev/pts --exclude=backups .<br />
+            # tar -cvpzf /backups/<span class="codecustom">fullbackup</span>.tar.gz --directory=<span class="codecustom">/</span> --exclude=proc --exclude=sys --exclude=dev/pts --exclude=backups .<br />
          </div>
          <h2>Encrypt the tar file</h2>
-         To encrypt your backup, you need a secret key. You need to keep this key safe on a usb drive or in your email. You can't restore your files without the key!<br />
-         <h3>create your secret encryption key</h3>
+         <div style="margin-top: 4px;"><span><div style="width: 20px; display:inline; float:left;">&nbsp;</div></span>To encrypt your backup, you need a secret key. You need to keep this key safe on a usb drive or in your email. You can't restore your files without the key!<br /></div>
+         <h3>create your secret encryption password</h3>
          <div class="codeblock">
-            # echo mysupersecretkey > /backups/key<br />
+            # echo <span class="codecustom">mysupersecretkey</span> > /backups/encryption.password<br />
          </div>
          <h3>encrypt your backup with openssl</h3>
          <div class="codeblock">
-            # openssl enc -aes-256-cbc -salt -in fullbackup.tar.gz -out fullbackup.tar.gz.enc -pass file:/backups/key<br />
+            # openssl enc -aes-256-cbc -salt -in fullbackup.tar.gz -out fullbackup.tar.gz.enc -pass file:/backups/encryption.password<br />
          </div>
          <h2>Upload your backup to tarbackup.com</h2>
          <div class="codeblock">
-            # cd /backups<br />
-            # sftp USER@tarbackup.com:/storage/<br />
-            > put fullbackup.tar.gz.enc<br />
+            # cd /backups<br /> 
+            # sftp <span class="codecustom">account</span>@tarbackup.com<br />
+            > put fullbackup.tar.gz.enc<br /> 
             > quit<br />
          </div>
          <h2>Restoring your data</h2>
          <h3>Download your data from tarbackup via sftp</h3>
          <div class="codeblock">
-            # mkdir /restores<br />
-            # cd /restores<br />
-            # sftp USER@tarbackup.com:/storage/<br />
-            > ls<br />
-            > get fullbackup.tar.gz.enc<br />
+            # mkdir /restores<br /> 
+            # cd /restores<br /> 
+            # sftp <span class="codecustom">account</span>@tarbackup.com<br />
+            > ls<br /> 
+            > get fullbackup.tar.gz.enc<br /> 
             > quit<br />
          </div>
          <h3>Decrypt the file</h3>
          <div class="codeblock">
-            # openssl enc -d -aes-256-cbc -in fullbackup.tar.gz.enc -out fullbackup.tar.gz -pass file:/path/to/secret/password.txt<br />
+            # openssl enc -d -aes-256-cbc -in fullbackup.tar.gz.enc -out fullbackup.tar.gz -pass file:<span class="codecustom">/path/to/secret/password.txt</span><br />
          </div>
          <h3>Extract your data</h3>
          <div class="codeblock">

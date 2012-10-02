@@ -1,15 +1,3 @@
-#       $OpenBSD: sshd_config,v 1.80 2008/07/02 02:24:18 djm Exp $
-
-# This is the sshd server system-wide configuration file.  See
-# sshd_config(5) for more information.
-
-# This sshd was compiled with PATH=/usr/local/bin:/bin:/usr/bin
-
-# The strategy used for options in the default sshd_config shipped with
-# OpenSSH is to specify options with their default value where
-# possible, but leave them commented.  Uncommented options change a
-# default value.
-
 #Port 22
 #AddressFamily any
 #ListenAddress 0.0.0.0
@@ -44,9 +32,9 @@ SyslogFacility AUTHPRIV
 #MaxAuthTries 6
 #MaxSessions 10
 
-#RSAAuthentication yes
-#PubkeyAuthentication yes
-#AuthorizedKeysFile     .ssh/authorized_keys
+RSAAuthentication yes
+PubkeyAuthentication yes
+AuthorizedKeysFile	/usr/local/etc/tarbackup/keys/%u/.ssh/authorized_keys
 #AuthorizedKeysCommand none
 #AuthorizedKeysCommandRunAs nobody
 
@@ -84,8 +72,8 @@ GSSAPICleanupCredentials yes
 #GSSAPIStrictAcceptorCheck yes
 #GSSAPIKeyExchange no
 
-# Set this to 'yes' to enable PAM authentication, account processing,
-# and session processing. If this is enabled, PAM authentication will
+# Set this to 'yes' to enable PAM authentication, account processing, 
+# and session processing. If this is enabled, PAM authentication will 
 # be allowed through the ChallengeResponseAuthentication and
 # PasswordAuthentication.  Depending on your PAM configuration,
 # PAM authentication via ChallengeResponseAuthentication may bypass
@@ -129,24 +117,17 @@ X11Forwarding yes
 #Banner none
 
 # override default of no subsystems
-#Subsystem      sftp    /usr/libexec/openssh/sftp-server
+#Subsystem	sftp	/usr/libexec/openssh/sftp-server
 
 # Example of overriding settings on a per-user basis
 #Match User anoncvs
 X11Forwarding no
 AllowTcpForwarding no
-#       ForceCommand cvs server
+#	ForceCommand cvs server
 
 Subsystem sftp internal-sftp
 Match Group targroup
 #Match User
 ChrootDirectory /mnt/r6/%u/
 #PasswordAuthentication yes
-#ForceCommand internal-sftp
-
-
-
-
-
-
-
+ForceCommand internal-sftp

@@ -6,7 +6,7 @@ $infilename = $dir . "userstocreate.txt";      # the queue of users that have si
 copy($infilename, $infilename . ".copy");  # make a copy to make this process as atomic as possible
 
 #delete and recreate the existing file with the same permissions
-unlink($infilename);
+unlink($infilename); 
 open NEWFILE, ">$infilename" or die $!;
 close NEWFILE;
 chmod 0666, $infilename;
@@ -20,14 +20,16 @@ while (<INFILE>) {
  $user = @parts[0];
  $password = @parts[1];
  $homedir = "/mnt/r6/$user";
- `/usr/sbin/useradd -g targroup -p '$password' -d $homedir $user`;
+ `/usr/sbin/useradd -g targroup -p '$password' -d $homedir -s /bin/false $user`;
  `chown root:root $homedir`;
  `chmod 711 $homedir`;
 
  `mkdir $homedir/storage`;
  `chown $user $homedir/storage`;
  `chmod 760 $homedir/storage`;
+
+ `/usr/sbin/usermod -d /storage/ $user`;
 }
 close LOGFILE;
 close INFILE;
-unlink($infilename . ".copy"); # delete the copy
+unlink($infilename . ".copy"); # delete the copy 

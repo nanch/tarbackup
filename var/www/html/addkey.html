@@ -1,0 +1,48 @@
+<html>
+   <head>
+      <title>tarbackup - add your public key</title>
+      <meta name="description" content="add your public key to tarbackup">
+      <style>
+         input { width:220px; }
+         * { font-family: "PT Serif", "Open Sans", "Lucida Sans Unicode", "Lucida Grande", sans-serif; color: #222;}
+         /*body { background-clip: border-box; background-color: transparent; background-image: url(http://tarbackup.com/bg-texture-01.jpg);*/
+         }
+      </style>
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css" />
+      <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet" type="text/css" />
+	  </head>
+   <body style="margin: 0px; padding: 0px; padding-top: 20px;">
+      <div style="margin: auto; padding: 0px; text-align: center;">
+         <h1><a href="/" style="text-decoration:none;"><span style="color: green;">tar</span>backup</a></h1>
+        <h2>online tar backup provided by <a href="http://www.nanch.com" style="color: blue; text-decoration:none;">nanch.com</a></h2>
+      </div>
+      <form action="addkey.php" method="POST" enctype="multipart/form-data" style="border:1px solid gray; width: 400px; margin: auto; padding: 10px; padding-left: 30px;">
+         <h2 style="margin: 0px; margin-bottom: 10px">add your public ssh key</h2>
+         <table>
+	    <tr>
+               <td>account name: </td>
+               <td><input type="text" name="name" /></td>
+            </tr>
+            <tr>
+               <td>password:</td>
+               <td><input type="password" name="password" /></td>
+            </tr>
+            <tr>
+               <td>
+public key file: </td>
+               <td><input type="file" name="publickey" id="publickey" /></td>
+            </tr>
+            <tr>
+               <td colspan="2"><input type="submit" value="add your public key" style="padding: 4px; font-size: 18px;" /></td>
+            </tr>
+         </table>
+      </form>
+      <br />
+      <div style="margin: auto; padding: 0px; text-align: center;">
+         <h1 style="display:inline;"><a href="/keyauth-howto.html" style="color: blue; text-decoration:none;">
+            how to use key-based auth
+            </a> 
+         </h1>
+      </div>
+   </body>
+</html>
