@@ -49,17 +49,6 @@ if (empty($_POST["password"])) {
 } else {
   $password = $_POST["password"];
 }
-<<<<<<< HEAD
-
-if (empty($_POST["passwordverify"])) {
-  echo "no passwordverify";
-  return;
-} else {
-  $passwordverify = $_POST["passwordverify"];
-}
-
-=======
->>>>>>> Commited some work items
 
 if (empty($_POST["passwordverify"])) {
   echo "no passwordverify";
@@ -81,10 +70,7 @@ if (empty($_POST["email"])) {
   return;
 } else {
   $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
-<<<<<<< HEAD
-=======
   //$email = $_POST["email"];
->>>>>>> Commited some work items
 }
 
 $myFile = "/usr/local/etc/tarbackup/userstocreate.txt";

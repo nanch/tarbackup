@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteRule ^backup$ backup.php
+RewriteRule ^restore$ restore.php
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]

@@ -1,24 +1,31 @@
 <html>
    <head>
-      <title>tarbackup - cloud tar backup</title>
-      <meta name="description" content="tarbackup is the easiest online tar backup service in the universe">
-      <style>
-         input { width:220px; }
-         * { font-family: "PT Serif", "Open Sans", "Lucida Sans Unicode", "Lucida Grande", sans-serif; color: #222;}
-         /*body { background-clip: border-box; background-color: transparent; background-image: url(http://tarbackup.com/bg-texture-01.jpg);*/
-         }
-      </style>
-      <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css" />
-      <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet" type="text/css" />
+	<title>tarbackup - tar backup</title>
+	<meta name="description" content="tarbackup is the easiest online tar backup service in the universe">
+	<meta name="viewport" content="width=500px, height=600px, user-scalable=yes" />
+	<link href="/styles.css" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet" type="text/css" />      
+
+
    </head>
-   <body style="margin: 0px; padding: 0px; padding-top: 20px;">
+   <body style="margin: 0px; padding: 0px; padding-top: 10px;">
+      <div id="fullcontainer" style="width: 500px; padding: 0px; margin:auto;  "> 
       <div style="margin: auto; padding: 0px; text-align: center;">
-         <h1><a href="/" style="text-decoration:none;"><span style="color: green;">tar</span>backup</a></h1>
-        <h2>online tar backup provided by <a href="http://www.nanch.com" style="color: blue; text-decoration:none;">nanch.com</a></h2>
+         <h1 style="maring-top: 0px;"><a href="/" class="titlelink"><span style="color: green;">tar</span>backup</a></h1>
+        <h3>simple tar backup for <span style="text-decoration: line-through;">$0.07/GB/mo</span><br />
+           free forever if you sign up now</h3>
       </div>
-      <form action="submit.php" method="POST" style="border:1px solid gray; width: 400px; margin: auto; padding: 10px; padding-left: 30px;">
-         <h2 style="margin: 0px; margin-bottom: 10px">create a free account</h2>
-         'account name' must be only letters and/or numbers.<br /><br/>
+	<div style="padding-left: 60px; margin: 0px; padding 0px;">
+	<ul>
+	<li>backup/restore encrypted tars via sftp, curl, or web</li>
+	<li>key-based sftp(ssh) authentication support</li>
+	</ul>
+	</div>
+      <form action="submit.php" method="POST" class="highlight" 
+	style="border:1px solid #CACACA; width: 400px; margin: auto; padding: 6px; padding-left: 30px; box-shadow: 1px 1px 1px #999;">
+         <h3 style="margin: 0px; margin-bottom: 10px">get your account and backup now</h3>
+         'account name' must be only letters and/or numbers.<br />
          (all fields required)
          <table>
 	    <tr>
@@ -38,7 +45,11 @@
                <td><input type="text" name="email" /></td>
             </tr>
             <tr>
-               <td colspan="2"><input type="submit" value="create your account" style="padding: 4px; font-size: 18px;" /></td>
+               <td colspan="2">by signing up, you agree to the <a href="/terms.html" style="color: blue; text-decoration:none;" target="_blank">terms of service</a></td>
+            </tr>
+            <tr>
+		<td style="height: 55px;"></td>
+		<td><input type="submit" value="create your account" style="padding: 4px; font-size: 18px;" /></td>
             </tr>
          </table>
       </form>
@@ -50,25 +61,42 @@
          </h1>
       </div>
 
-<br/><br/>
+<br/>
 
 <div style="margin: auto; padding: 0px; text-align: center;">
          <h3 style="display:inline;">
-	    <a href="http://www.github.com/nanch/tarbackup" style="color: blue; text-decoration:none;">
-            git the code
+	    <a href="/news.html" style="color: blue; text-decoration:none;">
+            news
             </a> |
-            <a href="http://wiki.tarbackup.com/" style="color: blue; text-decoration:none;">
+	    <a href="http://www.github.com/nanch/tarbackup" style="color: blue; text-decoration:none;" target="_blank">
+            opensource
+            </a> |
+            <a href="http://wiki.tarbackup.com/" style="color: blue; text-decoration:none;" target="_blank">
             wiki
             </a> | 
-	    <a href="/addkey.html" style="color: blue; text-decoration:none;">
-            key-based auth
-            </a> |
             <a href="/faq.html" style="color: blue; text-decoration:none;">
             FAQs
             </a>
          </h3>
       </div>
+<div style="margin: auto; padding-top: 20px; text-align: center;">
+         <h3 style="display:inline;">
+            <a href="/backup.html" style="color: blue; text-decoration:none;">
+            backup a tar
+            </a> |
+            <a href="/restore.html" style="color: blue; text-decoration:none;">
+            restore a tar
+            </a> |
+	    <a href="/addkey.html" style="color: blue; text-decoration:none;">
+            key-based auth
+            </a>
+         </h3>
+      </div>
 
-
+    </div>
+         <br/><br/>
+	<div style="margin: auto; padding: 0px; text-align: center;">
+         <h2 style="display:inline;">service provide by <a href="http://www.nanch.com" style="color: blue; text-decoration:none;">nanch</a></h2>
+      </div>
    </body>
 </html>

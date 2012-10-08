@@ -1,0 +1,75 @@
+.titlelink
+{
+	border-bottom: 1px solid lightgray;
+	text-decoration: none;
+//	font-family: 'Helvetica';
+}
+
+.titlelink span 
+{
+//	font-family: 'Helvetica';
+}
+
+input
+{
+	width: 220px;
+}
+*
+{
+	color: #333;
+	font-family: "PT Serif", "Open Sans", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+.highlight {
+	background-color: F2FFF2;
+        border: 1px solid #CACACA;
+        border-radius: 2px;
+        color: #393939;
+        khtml-border-radius: 2px;
+        moz-border-radius: 2px;
+        webkit-border-radius: 2px;
+}
+
+
+.codeblock
+{
+	background-color: ghostWhite;
+	border: 1px solid #CACACA;
+	border-radius: 2px;
+	color: #393939;
+	font-family: Courier, Menlo, Monaco, 'Andale Mono', 'lucida console', 'Courier New', monospace;
+	font-size: 13px;
+	khtml-border-radius: 2px;
+	moz-border-radius: 2px;
+	padding: 10px;
+	padding-top: 4px;	
+	padding-bottom: 4px;
+	webkit-border-radius: 2px;
+}
+h3
+{
+	color: #333;
+	font-family: "PT Serif", "Open Sans", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	margin-bottom: 2px;
+	margin-left: 25px;
+}
+h2
+{
+	color: #333;
+	font-family: "PT Serif", "Open Sans", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	margin-bottom: 2px;
+	margin-top: 25px;
+}
+h1
+{
+	color: #333;
+	font-family: "PT Serif", "Open Sans", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+.codecustom
+{
+	color: #DB5B26;
+	font-family: Courier, Menlo, Monaco, 'Andale Mono', 'lucida console', 'Courier New', monospace;
+	font-size: 13px;
+}
+
+

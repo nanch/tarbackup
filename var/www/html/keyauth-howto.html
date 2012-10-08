@@ -2,22 +2,17 @@
  <html>
    <head>
       <title>tarbackup - key-based auth</title>
-      <style>
-         input {width:220px;}
-         *{font-family: "PT Serif", "Open Sans", "Lucida Sans Unicode", "Lucida Grande", sans-serif; color: #222;}
-         .codeblock { background-color: #002B36; color: #3F9FEF; font-family: Menlo, Monaco, 'Andale Mono', 'lucida console', 'Courier New', monospace; padding: 20px;
-         -moz-border-radius: 10px; -webkit-border-radius: 10px; -khtml-border-radius: 10px; border-radius: 10px;}
-         h3 { margin-left: 25px; margin-bottom: 2px;font-family: "PT Serif", "Open Sans", "Lucida Sans Unicode", "Lucida Grande", sans-serif; color: #222;}
-         h2 { margin-top: 25px; margin-bottom: 2px; font-family: "PT Serif", "Open Sans", "Lucida Sans Unicode", "Lucida Grande", sans-serif; color: #222;}
-         h1 {font-family: "PT Serif", "Open Sans", "Lucida Sans Unicode", "Lucida Grande", sans-serif; color: #222;}
-         .codefont {font-family: Menlo, Monaco, 'Andale Mono', 'lucida console', 'Courier New', monospace;}
-      </style>
+	<meta name="description" content="how to use key-based ssh authentication with tarbackup">
+	<meta name="viewport" content="width=500px, height=600px, user-scalable=yes" />
+	<link href="/styles.css" rel="stylesheet" type="text/css" />
       <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css" />
       <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet" type="text/css" />
+
+	  
    </head>
    <body>
       <div style="margin: auto; padding: 0px; text-align: center; padding-top: 10px;">
-         <h1>key-based authentication with <a href="/" style="text-decoration:none;"><span style="color: green;">tar</span>backup</a></h1>
+         <h1>key-based authentication with <a href="/" class="titlelink"><span style="color: green;">tar</span>backup</a></h1>
       </div>
       <div style="margin: auto; padding: 0px; text-align: left; width: 800px;">
          <h2>Create your public/private key</h2>
@@ -25,7 +20,7 @@
             # cd ~ <br/>
 			# mkdir .ssh<br/>
 			# cd .ssh<br/>
-			# ssh-keygen -f tarbackup_rsa -C '<span class="codefont" style="color:#DB5B26;">account</span>@tarbackup.com' -N '' -t rsa -q<br/>
+			# ssh-keygen -f tarbackup_rsa -C '<span class="codecustom">account</span>@tarbackup.com' -N '' -t rsa -q<br/>
          </div>
          <h2>Upload your public key to tarbackup</h2>
          <div style="margin-top: 4px; margin-left: 20px;">Go to <a href="/addkey.html" target="_blank" style="color: blue; text-decoration:none;">https://tarbackup.com/addkey.html</a> to upload your public key (tarbackup_rsa.pub).</div>
@@ -35,12 +30,12 @@
          </div>
          <h2>Use sftp with the following command to use your ssh_config</h2>
          <div class="codeblock">
-            # sftp -F ~/ssh_config <span class="codefont" style="color:#DB5B26;">account</span>@tarbackup.com
+            # sftp -F ~/ssh_config <span class="codecustom">account</span>@tarbackup.com
          </div>
       </div>
       <br /><br />
       <div style="margin: auto; padding: 0px; text-align: center;">
-         <h1 style="display:inline;">service provide by <a href="http://www.nanch.com" style="color: blue; text-decoration:none;">nanch.com</a></h1>
+         <h2 style="display:inline;">service provide by <a href="http://www.nanch.com" style="color: blue; text-decoration:none;">nanch</a></h2>
       </div>
    </body>
 </html>

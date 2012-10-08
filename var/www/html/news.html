@@ -1,0 +1,44 @@
+<html>
+   <head>
+      <title>tarbackup news</title>
+      <meta name="viewport" content="width=500px, height=600px, user-scalable=yes" />
+	<link href="/styles.css" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css" />
+      <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet" type="text/css" />
+
+	  
+   </head>
+   <body>
+      <div style="margin: auto; padding: 0px; text-align: center; padding-top: 1px;">
+         <h1><a href="/" class="titlelink"><span style="color: green;">tar</span>backup</a> news</h1>
+      </div>
+      <div style="margin: auto; padding: 0px; text-align: left; min-width: 300px; max-width: 800px;">
+
+	<h2>2012-10-07</h2>
+         <div style="margin-top: 4px;">
+            <span>
+            Backup and restore tar files of up to 100MB from the command-line with curl! <br/>
+            </span>
+            <div class="codeblock">
+            # curl https://tarbackup.com/api/v1/backup.php -u <span class="codecustom">account</span>:<span class="codecustom">password</span> -F "file=@<span class="codecustom">backup.tar.gz.enc</span>" <br/><br/>
+            # curl https://tarbackup.com/api/v1/restore.php?file=<span class="codecustom">backup.tar.gz.enc</span> -u <span class="codecustom">account</span>:<span class="codecustom">password</span> > backup.tar.gz.enc
+            </div>
+         </div>
+
+         <h2>2012-10-06</h2>
+         <div style="margin-top: 4px;">
+            <span>A lot of feedback regarding tarbackup has been that the service should not be free. The reasoning behind this is that a free service is not sustainable in the long run, which is true. 
+                  So today I'm announcing tar backup service pricing at $0.07/GB/mo. This will allow me to pay for expenses and provide a reliable service into the future.
+         </div>
+
+	<h2>2012-09-23</h2>
+         <div style="margin-top: 4px;">
+            <span>Tarbackup is live! This service provides simple online tar backup! You can access the service from the command line via sftp.
+         </div>
+
+      <br /><br />
+      <div style="margin: auto; padding: 0px; text-align: center;">
+         <h2 style="display:inline;">service provide by <a href="http://www.nanch.com" style="color: blue; text-decoration:none;">nanch</a></h2>
+      </div>
+   </body>
+</html>
