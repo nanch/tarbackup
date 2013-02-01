@@ -1,4 +1,4 @@
- <html>
+<html>
  <html>
    <head>
       <title>tarbackup - key-based auth</title>
@@ -25,12 +25,18 @@
          <h2>Upload your public key to tarbackup</h2>
          <div style="margin-top: 4px; margin-left: 20px;">Go to <a href="/addkey.html" target="_blank" style="color: blue; text-decoration:none;">https://tarbackup.com/addkey.html</a> to upload your public key (tarbackup_rsa.pub).</div>
          <h2>Setup your local config</h2>
+                Paste this code snippet in your shell, and replace USERNAME with your tarbackup username.
          <div class="codeblock">
-            # echo "IdentityFile ~/.ssh/tarbackup_rsa" > ~/ssh_config<br /> 
+            # cat >> ~/.ssh/config << CONFIG_SNIPPET<br />
+            Host tarbackup.com<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;User         USERNAME<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;IdentityFile ~/.ssh/tarbackup_rsa<br />
+            CONFIG_SNIPPET<br />
          </div>
-         <h2>Use sftp with the following command to use your ssh_config</h2>
+         <h2>Use sftp normally</h2>
+	 	Now you need to supply neither your password nor your username, so you can just supply this command:
          <div class="codeblock">
-            # sftp -F ~/ssh_config <span class="codecustom">account</span>@tarbackup.com
+            # sftp tarbackup.com
          </div>
       </div>
       <br /><br />
