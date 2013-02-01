@@ -1,14 +1,11 @@
- <html>
- <html>
+<html>
    <head>
-      <title>tarbackup - key-based auth</title>
+	<title>tarbackup - key-based auth</title>
 	<meta name="description" content="how to use key-based ssh authentication with tarbackup">
 	<meta name="viewport" content="width=500px, height=600px, user-scalable=yes" />
 	<link href="/styles.css" rel="stylesheet" type="text/css" />
-      <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css" />
-      <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet" type="text/css" />
-
-	  
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet" type="text/css" />
    </head>
    <body>
       <div style="margin: auto; padding: 0px; text-align: center; padding-top: 10px;">
@@ -17,20 +14,27 @@
       <div style="margin: auto; padding: 0px; text-align: left; width: 800px;">
          <h2>Create your public/private key</h2>
          <div class="codeblock">
-            # cd ~ <br/>
-			# mkdir .ssh<br/>
-			# cd .ssh<br/>
-			# ssh-keygen -f tarbackup_rsa -C '<span class="codecustom">account</span>@tarbackup.com' -N '' -t rsa -q<br/>
+                # cd ~ <br/>
+                # mkdir .ssh<br/>
+                # cd .ssh<br/>
+                # ssh-keygen -f ~/.ssh/tarbackup_rsa -C '<span class="codecustom">account</span>@tarbackup.com' -N '' -t rsa -q<br/>
          </div>
          <h2>Upload your public key to tarbackup</h2>
          <div style="margin-top: 4px; margin-left: 20px;">Go to <a href="/addkey.html" target="_blank" style="color: blue; text-decoration:none;">https://tarbackup.com/addkey.html</a> to upload your public key (tarbackup_rsa.pub).</div>
          <h2>Setup your local config</h2>
+         Paste this whole snippet into your shell.
          <div class="codeblock">
-            # echo "IdentityFile ~/.ssh/tarbackup_rsa" > ~/ssh_config<br /> 
+            # cat << CONFIG_SNIPPET<br /> 
+            Host tarbackup.com<br /> 
+            &nbsp;&nbsp;&nbsp;&nbsp;User         USERNAME<br /> 
+            &nbsp;&nbsp;&nbsp;&nbsp;IdentityFile ~/.ssh/tarbackup_rsa<br /> 
+            CONFIG_SNIPPET<br /> 
          </div>
-         <h2>Use sftp with the following command to use your ssh_config</h2>
+            Now edit the ~/.ssh/config file and change the USERNAME string to your username at tarbackup.
+         <h2>Use sftp normally</h2>
+            Now you don't have to add your username to the sftp program, as it will use the one on your ~/.ssh/config file.
          <div class="codeblock">
-            # sftp -F ~/ssh_config <span class="codecustom">account</span>@tarbackup.com
+            # sftp tarbackup.com
          </div>
       </div>
       <br /><br />
@@ -39,4 +43,3 @@
       </div>
    </body>
 </html>
-
